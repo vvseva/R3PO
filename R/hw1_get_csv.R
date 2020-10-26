@@ -14,7 +14,7 @@ get_hw1_csv <- function(login = Sys.info()["user"]) {
 
   httr::GET("https://pub.nosoc.io/content/101/data_csv",
       query = list(vle_id = my_vle_login),
-      httr:write_disk(stringr::str_c("airline_hw_",my_vle_login,".csv"),
+      httr::write_disk(stringr::str_c("airline_hw_",my_vle_login,".csv"),
                  overwrite=TRUE)
   )
 }
