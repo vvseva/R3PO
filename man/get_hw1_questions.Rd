@@ -4,7 +4,7 @@
 \alias{get_hw1_questions}
 \title{Get a HW1 questions}
 \usage{
-get_hw1_questions(login = Sys.info()["user"])
+get_hw1_questions(login)
 }
 \arguments{
 \item{login}{your vle login}

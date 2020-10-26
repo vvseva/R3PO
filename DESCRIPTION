@@ -1,6 +1,6 @@
-Package: DSminor
+Package: R3PO
 Title: DS Minor service package
-Version: 0.0.1.26102020
+Version: 0.0.2.27102020
 Authors@R: 
     person(given = "Vsevolod",
            family = "Suschevskiy",
