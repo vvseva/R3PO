@@ -1,11 +1,10 @@
-#' Load set of HW1 dataframes
+#' Load set of HW1 dataframe with airlines
 #'
 #' This function loads a file in your environment
 #'
 #' @param login your vle login
-#' @return csv file that will be saved loaded to your disk and environment
+#' @return dataframe loaded to your environment
 #' @export
-
 
 get_hw1_airline_df <- function(login) {
   require(httr)
@@ -23,6 +22,15 @@ get_hw1_airline_df <- function(login) {
 
 }
 
+
+#' Load set of HW1 dataframe with airports
+#'
+#' This function loads a file in your environment
+#'
+#' @param login your vle login
+#' @return dataframe loaded to your environment
+#' @export
+
 get_hw1_airport_df <- function(login) {
   require(httr)
 
@@ -38,6 +46,14 @@ get_hw1_airport_df <- function(login) {
   return(httr::content(r))
 }
 
+#' Load set of HW1 dataframe with seats
+#'
+#' This function loads a file in your environment
+#'
+#' @param login your vle login
+#' @return dataframe loaded to your environment
+#' @export
+
 get_hw1_seat_df <- function(login) {
   require(httr)
 
@@ -52,6 +68,14 @@ get_hw1_seat_df <- function(login) {
 
   return(content(r))
 }
+
+#' Load set of HW1 dataframe with lounges
+#'
+#' This function loads a file in your environment
+#'
+#' @param login your vle login
+#' @return dataframe loaded to your environment
+#' @export
 
 get_hw1_lounge_df <- function(login) {
   require(httr)
