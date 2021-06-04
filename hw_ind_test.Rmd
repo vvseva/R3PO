@@ -1,0 +1,23 @@
+---
+title: "hw_ind"
+author: "Suschevskiy Vsevolod"
+date: "6/4/2021"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r}
+library(devtools)
+
+proj_set()
+
+use_data(minor_students,hw1_questions,internal = TRUE)
+```
+
+```{r}
+devtools::document()
+```
+
