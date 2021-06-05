@@ -10,8 +10,8 @@ get_hw_ind_questions(login)
 \item{login}{your vle login}
 }
 \value{
-df that you read from a directory
+text of the question
 }
 \description{
-This function loads questions in df
+This function loads questions for the ind task
 }
