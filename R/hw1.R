@@ -70,6 +70,7 @@ get_hw1_data <- function(login, path = NULL) {
   require(dplyr)
   require(stringr)
   require(kableExtra)
+  require(readr)
   # data(sysdata, envir = environment())
 
   if (missing(login)) {
@@ -133,9 +134,13 @@ get_hw1_data <- function(login, path = NULL) {
                    seat = seat)
 
     mapply(readr::write_csv, myList,
-           file=paste0(file.path(path, names(myList)), '.csv'))
+           file=paste0(path, names(myList), '.csv'))
 
-    print(paste("Записал вам файлы в папку", paste0(file.path(path, names(myList)))))
+    if (path == Null) {
+      print(paste("Записал вам файлы в рабочую директорию", paste0(path, names(myList), '.csv')))
+    } else {
+      print(paste("Записал вам файлы по этому пути", paste0(path, names(myList), '.csv')))
+    }
     print("Удачи с дз")
     print("Beep")
 
