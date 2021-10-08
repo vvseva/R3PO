@@ -29,19 +29,19 @@ get_hw1_questions <- function(login) {
 
     set.seed(seed)
 
-    df_q = R3PO:::hw1_questions
+    # df_q = R3PO:::hw1_questions
 
-    q1 = df_q %>%
+    q1 = R3PO:::hw1_questions %>%
       dplyr::filter(Comment == "1 таблица") %>%
       dplyr::sample_n(1) %>%
       dplyr::pull(var = Question)
 
-    q2 = df_q %>%
+    q2 = R3PO:::hw1_questions %>%
       dplyr::filter(Comment == "с текстами") %>%
       dplyr::sample_n(1) %>%
       dplyr::pull(var = Question)
 
-    q3 = df_q %>%
+    q3 = R3PO:::hw1_questions %>%
       dplyr::filter(Comment == "2 таблицы") %>%
       dplyr::sample_n(1) %>%
       dplyr::pull(var = Question)
