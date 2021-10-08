@@ -2,6 +2,7 @@
 
 export(get_hw1_airline_df)
 export(get_hw1_airport_df)
+export(get_hw1_data)
 export(get_hw1_lounge_df)
 export(get_hw1_questions)
 export(get_hw1_seat_df)

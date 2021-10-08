@@ -1,6 +1,6 @@
 Package: R3PO
 Title: DS Minor service package
-Version: 0.0.7.05062021
+Version: 0.0.7.08102021
 Authors@R: 
     person(given = "Vsevolod",
            family = "Suschevskiy",
@@ -8,8 +8,7 @@ Authors@R:
            email = "vvsuschevskiy@gmail.com",
            comment = c(ORCID = "0000-0003-2122-1024"))
 Description: This is a package for international use in DS minor at HSE University. It has the only job to distribute first HW.
-License: `use_mit_license()`, `use_gpl3_license()` or friends to
-    pick a license
+License: MIT + file LICENSE
 Encoding: UTF-8
 LazyData: true
 Roxygen: list(markdown = TRUE)
