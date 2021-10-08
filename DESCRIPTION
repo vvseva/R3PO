@@ -1,6 +1,6 @@
 Package: R3PO
 Title: DS Minor service package
-Version: 0.0.6.05062021
+Version: 0.0.7.05062021
 Authors@R: 
     person(given = "Vsevolod",
            family = "Suschevskiy",
@@ -20,6 +20,7 @@ Imports:
 	tidyr,
 	tibble,
 	dplyr,
-	usethis
+	usethis,
+	kableExtra
 Depends: 
-    R (>= 3.50)
+    R (>= 4.0)
