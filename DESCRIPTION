@@ -1,6 +1,6 @@
 Package: R3PO
 Title: DS Minor service package
-Version: 0.0.7.08102021
+Version: 0.0.7.09102021
 Authors@R: 
     person(given = "Vsevolod",
            family = "Suschevskiy",
