@@ -78,7 +78,7 @@ get_hw1_data <- function(login, path = NULL) {
     my_vle_login = login
   }
 
-  print("Hello", my_vle_login)
+  print(paste("Hello", my_vle_login))
 
   if (!my_vle_login %in% R3PO:::students_2021$name) {
     print("Beeeeeep")
@@ -135,7 +135,7 @@ get_hw1_data <- function(login, path = NULL) {
     mapply(readr::write_csv, myList,
            file=paste0(file.path(path, names(myList)), '.csv'))
 
-    print("Записал вам файлы в папку", paste0(file.path(path, names(myList))))
+    print(paste("Записал вам файлы в папку", paste0(file.path(path, names(myList)))))
     print("Удачи с дз")
     print("Beep")
 
