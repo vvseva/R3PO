@@ -136,7 +136,7 @@ get_hw1_data <- function(login, path = NULL) {
     mapply(readr::write_csv, myList,
            file=paste0(path, names(myList), '.csv'))
 
-    if (path == Null) {
+    if (path == NULL) {
       print(paste("Записал вам файлы в рабочую директорию", paste0(path, names(myList), '.csv')))
     } else {
       print(paste("Записал вам файлы по этому пути", paste0(path, names(myList), '.csv')))
