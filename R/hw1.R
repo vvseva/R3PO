@@ -135,7 +135,7 @@ get_hw1_data <- function(login, path = NULL) {
                    lounge = lounge,
                    seat = seat)
 
-    mapply(readr::write.csv, myList,
+    mapply(write.csv, myList,
            file=paste0(path, names(myList), '.csv'))
 
     if (is.null(path)) {
