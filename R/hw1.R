@@ -19,7 +19,7 @@ get_hw1_questions <- function(login) {
   }
 
   if (!my_vle_login %in% R3PO:::students_2021$name) {
-    print("invalid login")
+    stop("invalid login")
   } else {
 
     seed = R3PO:::students_2021 %>%
@@ -80,14 +80,14 @@ get_hw1_data <- function(login, df_name = "airline") {
     my_vle_login = login
   }
 
-  print(paste("Hello", my_vle_login))
+  message(paste("Hello", my_vle_login))
 
   if (!my_vle_login %in% R3PO:::students_2021$name) {
-    print("Beeeeeep")
-    print("invalid login")
+    message("Beeeeeep")
+    stop("invalid login")
   } else {
 
-    print("Beeep")
+    message("Beeep")
 
     seed <-  R3PO:::students_2021 %>%
       dplyr::filter(name == my_vle_login) %>%
@@ -139,14 +139,14 @@ get_hw1_data <- function(login, df_name = "airline") {
 
     } else {
 
-      print("wrong dataset name")
+      stop("wrong dataset name")
       stop()
 
     }
 
-    print(paste("держи", df_name))
+    message(paste("держи", df_name))
     return(df_to_return)
-    print("Beep")
+    message("Beep")
 
     }
 

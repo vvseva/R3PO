@@ -4,12 +4,12 @@
 \alias{get_hw1_data}
 \title{Load set of HW1 dataframe with airlines}
 \usage{
-get_hw1_data(login, path = NULL)
+get_hw1_data(login, df_name = "airline")
 }
 \arguments{
 \item{login}{your vle login}
 
-\item{path}{place to write csv could be path, i.e. ~/my_folder/, or null}
+\item{df_name}{name of a dataset airline, airport, lounge or seat}
 }
 \value{
 list of dataframes, also write csv files to your disk

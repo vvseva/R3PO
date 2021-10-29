@@ -1,6 +1,6 @@
 Package: R3PO
 Title: DS Minor service package
-Version: 0.0.7.09102021
+Version: 0.0.7.29102021
 Authors@R: 
     person(given = "Vsevolod",
            family = "Suschevskiy",
@@ -12,7 +12,7 @@ License: MIT + file LICENSE
 Encoding: UTF-8
 LazyData: true
 Roxygen: list(markdown = TRUE)
-RoxygenNote: 7.1.1
+RoxygenNote: 7.1.2
 Imports:
 	httr,
 	stringr,
