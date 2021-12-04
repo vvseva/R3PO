@@ -19,7 +19,7 @@ get_hw_ind_questions <- function(login) {
   }
 
   if (!my_vle_login %in% R3PO:::students_2021$name) {
-    stop("invalid login")
+    stop("invalid login, PLEASE connect with your teachers and show a screenshot of this error")
   } else {
 
     seed = R3PO:::students_2021 %>%
