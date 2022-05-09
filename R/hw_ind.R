@@ -28,20 +28,22 @@ get_hw_ind_questions <- function(login) {
       pull()
 
     set.seed(seed)
+    message("Будет одно из заданий подобного типа в зависимости от того, что уже сделано в групповом проекте,
+            финальное задание появится позже")
+    df_q = R3PO:::ind_tasks_2 %>%
+      sample_n(3)
 
-    df_q = read.csv("data/hw1_questions.csv")
-
-    q1 = df_q %>%
-      filter(Comment == "1 таблица") %>%
-      sample_n(1) %>% pull(var = Question)
-
-    q2 = df_q %>%
-      filter(Comment == "с текстами") %>%
-      sample_n(1) %>% pull(var = Question)
-
-    q3 = df_q %>%
-      filter(Comment == "2 таблицы") %>%
-      sample_n(1) %>% pull(var = Question)
+    # q1 = df_q %>%
+    #   # filter(Comment == "1 таблица") %>%
+    #   sample_n(1) %>% pull(var = Question)
+    #
+    # q2 = df_q %>%
+    #   # filter(Comment == "с текстами") %>%
+    #   sample_n(1) %>% pull(var = Question)
+    #
+    # q3 = df_q %>%
+    #   # filter(Comment == "2 таблицы") %>%
+    #   sample_n(1) %>% pull(var = Question)
 
     # test_team = ind_login %>%
     #   dplyr::filter(login == my_vle_login) %>%
@@ -60,9 +62,11 @@ get_hw_ind_questions <- function(login) {
 
 
     return(
-      R3PO:::ind_task_final %>%
-        dplyr::filter(login == my_vle_login) %>%
-        dplyr::pull("task_text")
+      df_q %>%
+        dplyr::mutate(id = 1:3,
+                      comment = "Не финальное задание") %>%
+        kableExtra::kbl() %>%
+        kableExtra::kable_styling()
     )
   }
 
