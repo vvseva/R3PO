@@ -28,10 +28,10 @@ get_hw_ind_questions <- function(login) {
       pull()
 
     set.seed(seed)
-    message("Будет одно из заданий подобного типа в зависимости от того, что уже сделано в групповом проекте,
-            финальное задание появится позже")
-    df_q = R3PO:::ind_tasks_2 %>%
-      sample_n(3)
+    # message("Будет одно из заданий подобного типа в зависимости от того, что уже сделано в групповом проекте,
+    #         финальное задание появится позже")
+    # df_q = R3PO:::ind_tasks_2 %>%
+    #   sample_n(3)
 
     # q1 = df_q %>%
     #   # filter(Comment == "1 таблица") %>%
@@ -45,16 +45,20 @@ get_hw_ind_questions <- function(login) {
     #   # filter(Comment == "2 таблицы") %>%
     #   sample_n(1) %>% pull(var = Question)
 
-    # test_team = ind_login %>%
-    #   dplyr::filter(login == my_vle_login) %>%
-    #   dplyr::pull(team)
+    test_team = R3PO:::teams_df %>%
+      dplyr::filter(name == my_vle_login) %>%
+      dplyr::pull(team)
     #
-    # test_vect = ind_login %>%
-    #   dplyr::filter(team == test_team) %>%
-    #   dplyr::pull("banned ind-task") %>%
-    #   unique() %>%
-    #   stringr::str_split(pattern = ", ", simplify = T)
+    test_vect = R3PO:::banned_tasks %>%
+      dplyr::filter(team == test_team) %>%
+      dplyr::pull("banned ind-task") %>%
+      unique() %>%
+      stringr::str_split(pattern = ", ", simplify = T)
     #
+    df_q = R3PO:::ind_tasks_2 %>%
+      dplyr::filter(!task_id %in% test_vect) %>%
+      sample_n(1)
+
     # R3PO:::minor_students %>%
     #   dplyr::filter(student_id == my_vle_login) %>%
     #   dplyr::pull(random_seed) %>%
@@ -63,8 +67,6 @@ get_hw_ind_questions <- function(login) {
 
     return(
       df_q %>%
-        dplyr::mutate(id = 1:3,
-                      comment = "Не финальное задание") %>%
         kableExtra::kbl() %>%
         kableExtra::kable_styling()
     )
